@@ -31,7 +31,7 @@ def emotion_detector(text_to_analyze):
     myobj = {"raw_document": {"text": text_to_analyze}}
 
     try:
-        response = requests.post(url, json=myobj, headers=headers, timeout=4)
+        response = requests.post(url, json=myobj, headers=headers, timeout=(0.5, 2))
         if response.status_code == 400:
             return {
                 'anger': None,
